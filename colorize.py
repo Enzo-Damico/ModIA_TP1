@@ -10,7 +10,7 @@ from  torchvision.utils import make_grid #to generate image grids, will be used 
 
 
 from data_utils import get_colorized_dataset_loader # dataloarder
-from unet import UNet
+from prod.unet import UNet
 
 import tensorflow as tf  
 import tensorboard as tb  
