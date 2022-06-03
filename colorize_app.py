@@ -18,16 +18,16 @@ def recognize_digit(image):
     return "colorized.png"
 
 if __name__=='__main__':
-    parser = ...
-    parser.add_argument(...)
-    args = ...
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--weights_path')
+    args = parser.parse_args()
 
     model = UNet().to(device)
-    model.load_state_dict(..., map_location=torch.device(device))
+    model.load_state_dict(args.weights_path, map_location=torch.device(device))
     model.eval()
     gr.Interface(fn=recognize_digit, 
                 inputs=gr.Image(type="pil", image_mode='L'), 
                 outputs="image",
                 #live=True,
                 description="Select an image",
-                ).launch(debug=True, share=True);
+                ).launch(debug=True, share=True)
