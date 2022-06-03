@@ -25,4 +25,4 @@ if __name__=='__main__':
                 outputs=gr.outputs.Label(num_top_classes=3),
                 live=True,
                 description="Draw a number on the sketchpad to see the model's prediction.",
-                ).launch(debug=True, share=True);
+                ).launch(debug=True, share=True)
